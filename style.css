@@ -17,6 +17,19 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#style-info {
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--text-color);
+
+    position: fixed;
+    top: 60%;
+    left: 45%;
+    transform: translateX(-50%);
+}
+
 .theme-btn {
     background: none;
     border: none;
@@ -36,4 +49,10 @@ body {
 }
 .theme-btn:hover .hover-img {
     display: block;
+}
+
+#baldi {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
