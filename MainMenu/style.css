@@ -82,9 +82,26 @@ body {
     border: none;
     padding: 0;
     cursor: pointer;
+    position: relative;
+}
+.style-door:hover .door-text {
+    display: none;
+}
+.door-text {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 13%;
+
+    color: var(--text-color);
+    transition: color 0.3s ease, color 0.3s ease;
+    
+    font-family: 'Comic Sans MS';
+    font-weight: bold;
+    pointer-events: none;
 }
 
 #classic-style-door, #party-style-door, #demo-style-door {
-    position: static;
+    position: relative;
 }
 
