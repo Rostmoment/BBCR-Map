@@ -1,3 +1,9 @@
+function addHoverStyleText(element, text) {
+    const styleText = document.getElementById("style-info");
+    element.addEventListener('mouseenter', () => {
+        styleText.innerHTML = text;
+    });
+}
 
 function initializeThemeChanges() {
     const themeToggleBtn = document.getElementById('theme-toggle');
@@ -19,12 +25,17 @@ function initializeThemeChanges() {
     });
     addHoverStyleText(themeToggleBtn, "Change theme to dark or light whenever you want")
 }
-function addHoverStyleText(element, text) {
-    const styleText = document.getElementById("style-info");
-    element.addEventListener('mouseenter', () => {
-        styleText.innerHTML = text;
-    });
+
+function initializeNullStyle() {
+    addHoverStyleText(document.getElementById("baldi"), "Null/Glitch style")
+}
+function initializeMainStyles() {
+    addHoverStyleText(document.getElementById("classic-style-door"), "Classic Style")
+    addHoverStyleText(document.getElementById("party-style-door"), "Party Style")
+    addHoverStyleText(document.getElementById("demo-style-door"), "Demo Style")
 }
 
 initializeThemeChanges();
-addHoverStyleText(document.getElementById("baldi"), "NULL STYLE<br>WIP")
+
+initializeNullStyle();
+initializeMainStyles();
