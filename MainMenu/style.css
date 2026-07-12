@@ -52,9 +52,18 @@ body {
 }
 
 #baldi {
+    background: none;
+    border: none;
     position: fixed;
+    padding: 0;
     bottom: 0;
     left: 0;
+    transition: filter 0.1s;
+}
+
+#baldi:hover {
+    filter: url(#glitch-filter) hue-rotate(90deg) contrast(1.2);
+    cursor: pointer;
 }
 
 .door-container {

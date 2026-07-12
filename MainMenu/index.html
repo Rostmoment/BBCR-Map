@@ -31,7 +31,20 @@
         </button>
     </div>
 
-    <img src="BaldiMenuTalk.png" id="baldi">
+    <button id="baldi">
+        <img src="BaldiMenuTalk.png">
+        <svg style="position: absolute; width: 0; height: 0;">
+            <defs>
+                <filter id="glitch-filter">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.00001 0.15" numOctaves="1" result="noise" seed="0">
+                        <animate attributeName="seed" values="0;100;50;200;150" dur="0.2s" repeatCount="indefinite" />
+                    </feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </defs>
+        </svg>
+    </button>
+
 
     <h1 id="style-info">Select style</h1>
 
