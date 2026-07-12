@@ -51,7 +51,7 @@ body {
     display: block;
 }
 
-#baldi {
+#null-style {
     background: none;
     border: none;
     position: fixed;
@@ -61,7 +61,7 @@ body {
     transition: filter 0.1s;
 }
 
-#baldi:hover {
+#null-style:hover {
     filter: url(#glitch-filter) hue-rotate(90deg) contrast(1.2);
     cursor: pointer;
 }

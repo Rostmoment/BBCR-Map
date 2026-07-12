@@ -26,16 +26,19 @@ function initializeThemeChanges() {
     addHoverStyleText(themeToggleBtn, "Change theme to dark or light whenever you want")
 }
 
-function initializeNullStyle() {
-    addHoverStyleText(document.getElementById("baldi"), "Null/Glitch style")
+function initializeStyle(elementId, name) {
+    const element = document.getElementById(elementId);
+    addHoverStyleText(element, `${name} Style`);
+    element.addEventListener("click", () => {
+        window.location.href = `../Styles/index.html?style=${name}`;
+    });
 }
-function initializeMainStyles() {
-    addHoverStyleText(document.getElementById("classic-style-door"), "Classic Style")
-    addHoverStyleText(document.getElementById("party-style-door"), "Party Style")
-    addHoverStyleText(document.getElementById("demo-style-door"), "Demo Style")
+function initializeStyles() {
+    initializeStyle("null-style", "Null");
+    initializeStyle("classic-style-door", "Classic");
+    initializeStyle("party-style-door", "Party");
+    initializeStyle("demo-style-door", "Demo");
 }
 
 initializeThemeChanges();
-
-initializeNullStyle();
-initializeMainStyles();
+initializeStyles();
