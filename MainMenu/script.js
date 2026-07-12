@@ -9,6 +9,9 @@ function addHoverStyleText(element, text) {
 function initializeCredits() {
     const credit = document.getElementById("credits-button");
     addHoverStyleText(credit, "Credits of this site");
+    credit.addEventListener("click", () => {
+        window.location.href = "../Credits/index.html";
+    });
 }
 
 function initializeStyle(elementId, name) {

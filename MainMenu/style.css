@@ -1,25 +1,12 @@
-*, button {
-    cursor: url("../Cursor.png"), auto;
-}
-
 :root {
     --bg-color: #000000;
     --text-color: #ffffff;
-}
-
-
-body {
-    background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #style-info {
     font-family: 'Comic Sans MS';
     text-align: center;
     white-space: nowrap;
-
-    color: var(--text-color);
-    transition: color 0.3s ease, color 0.3s ease;
 
     position: fixed;
     top: 70%;
@@ -39,22 +26,6 @@ body {
     right: 20px;
 }
 
-.image-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-.image-button .hover-img, .style-door .hover-img {
-    display: none;
-}
-.image-button:hover .default-img, .style-door:hover .default-img {
-    display: none;
-}
-.image-button:hover .hover-img,  .style-door:hover .hover-img {
-    display: block;
-}
 
 #null-style {
     background: none;
@@ -98,8 +69,6 @@ body {
     top: 30%;
     left: 13%;
 
-    color: var(--text-color);
-    transition: color 0.3s ease, color 0.3s ease;
     
     font-family: 'Comic Sans MS';
     font-weight: bold;

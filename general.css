@@ -1,0 +1,28 @@
+*, button {
+    cursor: url("Cursor.png"), auto;
+}
+
+body {
+    background-color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, span, pre {
+    color: white;
+}
+
+.image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image-button .hover-img {
+    display: none;
+}
+.image-button:hover .default-img {
+    display: none;
+}
+.image-button:hover .hover-img {
+    display: block;
+}

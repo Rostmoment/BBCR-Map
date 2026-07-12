@@ -1,0 +1,260 @@
+
+:root {
+    --card-bg: rgba(30, 30, 40, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --glow-color-1: rgba(100, 160, 255, 0.5);
+    --glow-color-2: rgba(180, 130, 255, 0.4);
+    --glow-color-3: rgba(255, 140, 180, 0.4);
+    --text-primary: #f0f0f5;
+    --text-secondary: #b0b0c0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(ellipse at 50% 30%, #1a1a2e 0%, #0d0d14 70%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 20% 40%, rgba(100, 150, 255, 0.04) 0%, transparent 50%), radial-gradient(circle at 75% 30%, rgba(180, 120, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 50% 70%, rgba(255, 130, 160, 0.03) 0%, transparent 50%);
+}
+
+#back-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 28px;
+    padding: 40px 30px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    background: linear-gradient(160deg, rgba(28, 28, 42, 0.85) 0%, rgba(22, 22, 36, 0.9) 50%, rgba(18, 18, 30, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    width: 300px;
+    padding: 28px 22px 22px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.15) 30%, rgba(255, 255, 255, 0.06) 60%, rgba(255, 255, 255, 0.02) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(100, 160, 255, 0.5) 0%, rgba(160, 120, 255, 0.6) 40%, rgba(255, 120, 170, 0.5) 80%, rgba(100, 180, 255, 0.4) 100%);
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-14px) scale(1.03);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55), 0 0 60px rgba(100, 150, 255, 0.25), 0 0 100px rgba(150, 100, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+.card:hover::after {
+    background: #8cb4ff;
+    box-shadow: 0 0 14px rgba(130, 170, 255, 0.8), 0 0 28px rgba(130, 150, 255, 0.4);
+    transform: scale(1.3);
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    transition: color 0.35s ease, text-shadow 0.35s ease;
+    text-align: center;
+}
+
+.card:hover .card-title {
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(180, 200, 255, 0.7), 0 0 60px rgba(140, 160, 255, 0.3);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 18px;
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    transition: color 0.35s ease;
+    opacity: 0.8;
+}
+
+.card:hover .card-description {
+    color: #d0d0e8;
+    opacity: 1;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card-image-wrapper {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 50px rgba(120, 150, 255, 0.3), 0 0 80px rgba(150, 110, 255, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.4s ease;
+    filter: brightness(0.9) saturate(0.85);
+}
+
+.card:hover .card-image {
+    transform: scale(1.06);
+    filter: brightness(1.08) saturate(1.1);
+}
+
+.card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    transform: rotate(25deg);
+    z-index: 2;
+}
+
+.card:hover .card-image-wrapper::after {
+    opacity: 1;
+    animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        transform: translate(-15%, -15%) rotate(25deg);
+    }
+
+    50% {
+        transform: translate(15%, 15%) rotate(25deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        gap: 20px;
+        padding: 24px 16px;
+    }
+
+    .card {
+        width: 260px;
+        padding: 22px 16px 18px;
+        border-radius: 16px;
+    }
+
+    .card::before {
+        border-radius: 18px;
+    }
+
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-description {
+        font-size: 0.78rem;
+        margin-bottom: 14px;
+    }
+
+    .card-image {
+        border-radius: 10px;
+    }
+
+    .card-image-wrapper {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
