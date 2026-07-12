@@ -25,6 +25,10 @@ function initializeThemeChanges() {
     });
     addHoverStyleText(themeToggleBtn, "Change theme to dark or light whenever you want")
 }
+function initializeCredits() {
+    const credit = document.getElementById("credits-button");
+    addHoverStyleText(credit, "Credits of this site");
+}
 
 function initializeStyle(elementId, name) {
     const element = document.getElementById(elementId);
@@ -41,4 +45,5 @@ function initializeStyles() {
 }
 
 initializeThemeChanges();
+initializeCredits();
 initializeStyles();
