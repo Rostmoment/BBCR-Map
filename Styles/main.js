@@ -75,4 +75,6 @@ addCell(8, 1);
 addCell(8, 2);
 addCell(8, 4);
 
+
 updateZoom();
+document.body.style.zoom = "25%"; 
