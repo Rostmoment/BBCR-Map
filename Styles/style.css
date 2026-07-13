@@ -70,6 +70,7 @@ body::before {
     transition: all 0.15s ease;
     position: relative;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .cell:hover {
@@ -79,10 +80,12 @@ body::before {
 
 .unknown-cell {
     background-image: url("Textures/Placeholder.png");
-    box-shadow: 0 2px 8px rgba(74, 144, 217, 0.3);
-    position: relative;
-    overflow: hidden;
 }
+
+.blue-carpet {
+    background-image: url("Textures/BlueCarpet.png");
+}
+
 
 
 @keyframes shimmer {
