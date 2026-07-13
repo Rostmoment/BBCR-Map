@@ -5,6 +5,7 @@
 }
 
 body {
+    zoom: 0.25;
     background: radial-gradient(ellipse at 50% 30%, #1a1a2e 0%, #0d0d14 70%);
     min-height: 100vh;
     display: flex;

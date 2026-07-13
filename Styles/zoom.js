@@ -26,5 +26,4 @@ function initZoom() {
     }, { passive: false });
 
     updateZoom();
-    document.body.style.zoom = "25%";
 }
