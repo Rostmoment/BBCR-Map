@@ -13,7 +13,7 @@ body {
     justify-content: center;
     font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
 }
 
@@ -46,9 +46,6 @@ body::before {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#map-container {
 }
 
 #map {

@@ -19,11 +19,13 @@ function updateZoom() {
     mapWrapper.style.transform = `scale(${currentScale})`;
 }
 
-mapWrapper.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
-    currentScale = Math.min(Math.max(currentScale + delta, MIN_SCALE), MAX_SCALE);
-    updateZoom();
+document.addEventListener("wheel", (e) => {
+    if (e.ctrlKey) {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
+        currentScale = Math.min(Math.max(currentScale + delta, MIN_SCALE), MAX_SCALE);
+        updateZoom();
+    }
 }, { passive: false });
 
 
