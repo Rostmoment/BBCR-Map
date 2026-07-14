@@ -28,7 +28,7 @@ function initializeAllClassrooms() {
         [12, 37], [13, 37], [14, 37], [15, 37], [16, 37],
         [12, 38], [13, 38], [14, 38], [15, 38], [16, 38]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom1);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom1);
 
     cells = [
         [18, 35], [19, 35], [20, 35], [21, 35], [22, 35],
@@ -36,7 +36,7 @@ function initializeAllClassrooms() {
         [18, 37], [19, 37], [20, 37], [21, 37], [22, 37],
         [18, 38], [19, 38], [20, 38], [21, 38], [22, 38]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom2);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom2);
 
     cells = [
         [18, 27], [19, 27], [20, 27], [21, 27], [22, 27],
@@ -45,7 +45,7 @@ function initializeAllClassrooms() {
         [18, 30], [19, 30], [20, 30], [21, 30], [22, 30],
         [18, 31], [19, 31], [20, 31], [21, 31], [22, 31]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom3);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom3);
 
     cells = [
         [11, 16], [12, 16], [13, 16], [14, 16], [15, 16],
@@ -53,7 +53,7 @@ function initializeAllClassrooms() {
         [11, 18], [12, 18], [13, 18], [14, 18], [15, 18],
         [11, 19], [12, 19], [13, 19], [14, 19], [15, 19]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom4);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom4);
 
     cells = [
         [1, 10], [2, 10], [3, 10], [4, 10], [5, 10],
@@ -62,7 +62,7 @@ function initializeAllClassrooms() {
         [1, 13], [2, 13], [3, 13], [4, 13], [5, 13],
         [1, 14], [2, 14], [3, 14], [4, 14], [5, 14]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom5);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom5);
 
     cells = [
         [21, 7], [22, 7], [23, 7], [24, 7], [25, 7], [26, 7], [27, 7],
@@ -71,7 +71,7 @@ function initializeAllClassrooms() {
         [21, 10], [22, 10], [23, 10], [24, 10], [25, 10], [26, 10], [27, 10],
         [21, 11], [22, 11], [23, 11], [24, 11], [25, 11], [26, 11], [27, 11]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom6);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom6);
 
     cells = [
         [21, 21], [22, 21], [23, 21], [24, 21], [25, 21], [26, 21], [27, 21],
@@ -80,7 +80,7 @@ function initializeAllClassrooms() {
         [21, 24], [22, 24], [23, 24], [24, 24], [25, 24], [26, 24], [27, 24],
         [21, 25], [22, 25], [23, 25], [24, 25], [25, 25], [26, 25], [27, 25]
     ];
-    addCells2DArray(cells, FloorTypes.BlueCarpet, Classroom.Classroom7);
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom7);
 }
 
 function initializeAllFaculties() {
@@ -93,7 +93,7 @@ function initializeAllFaculties() {
         [7, 37], [8, 37], [9, 37], [10, 37], [11, 37],
         [7, 38], [8, 38], [9, 38], [10, 38], [11, 38]
     ];
-    addCells2DArray(cells, FloorTypes.RedCarpet, Faculty.Faculty1);
+    addCells2DArray(cells, FloorType.RedCarpet, Rooms.Faculty1);
 
     cells = [
         [12, 27], [13, 27], [14, 27], [15, 27], [16, 27],
@@ -104,7 +104,7 @@ function initializeAllFaculties() {
         [12, 32], [13, 32], [14, 32], [15, 32], [16, 32],
         [12, 33], [13, 33], [14, 33], [15, 33], [16, 33]
     ];
-    addCells2DArray(cells, FloorTypes.RedCarpet, Faculty.Faculty2);
+    addCells2DArray(cells, FloorType.RedCarpet, Rooms.Faculty2);
 
     cells = [
         [24, 28], [25, 28], [26, 28], [27, 28],
@@ -114,7 +114,7 @@ function initializeAllFaculties() {
         [24, 32], [25, 32], [26, 32], [27, 32],
         [24, 33], [25, 33], [26, 33], [27, 33]
     ];
-    addCells2DArray(cells, FloorTypes.RedCarpet, Faculty.Faculty3);
+    addCells2DArray(cells, FloorType.RedCarpet, Rooms.Faculty3);
 
     cells = [
         [21, 14], [22, 14], [23, 14], [24, 14], [25, 14], [26, 14], [27, 14],
@@ -123,7 +123,7 @@ function initializeAllFaculties() {
         [21, 17], [22, 17], [23, 17], [24, 17], [25, 17], [26, 17], [27, 17],
         [21, 18], [22, 18], [23, 18], [24, 18], [25, 18], [26, 18], [27, 18]
     ];
-    addCells2DArray(cells, FloorTypes.RedCarpet, Faculty.Faculty4);
+    addCells2DArray(cells, FloorType.RedCarpet, Rooms.Faculty4);
 
     cells = [
         [7, 21], [8, 21], [9, 21], [10, 21], [11, 21], [12, 21], [13, 21],
@@ -132,5 +132,20 @@ function initializeAllFaculties() {
         [7, 24], [8, 24], [9, 24], [10, 24], [11, 24], [12, 24], [13, 24],
         [7, 25], [8, 25], [9, 25], [10, 25], [11, 25], [12, 25], [13, 25]
     ];
-    addCells2DArray(cells, FloorTypes.RedCarpet, Faculty.Faculty5);
+    addCells2DArray(cells, FloorType.RedCarpet, Rooms.Faculty5);
+}
+
+function initializeMinorRooms() {
+    // Gotta sweep closet
+    let cells = [
+        [24, 36], [25, 36]
+    ];
+    addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Closet);
+
+    // Bladder room
+    cells = [
+        [24, 19], [25, 19],
+        [24, 20], [25, 20]
+    ];
+    addCells2DArray(cells, FloorType.Secret, Rooms.BladderRoom);
 }

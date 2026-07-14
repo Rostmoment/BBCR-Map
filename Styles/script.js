@@ -13,3 +13,4 @@ initZoom();
 
 initializeAllClassrooms();
 initializeAllFaculties();
+initializeMinorRooms();
