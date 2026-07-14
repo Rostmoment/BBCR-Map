@@ -93,6 +93,9 @@ body::before {
     background-image: url("Textures/BlueCarpet.png");
 }
 
+.cafeteria-cell {
+    background-image: url("Textures/Cafeteria.png");
+}
 
 .hall-cell {
     background-image: url("Textures/Hall.png");
