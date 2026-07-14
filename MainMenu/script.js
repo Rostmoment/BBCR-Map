@@ -7,10 +7,18 @@ function addHoverStyleText(element, text) {
 
 
 function initializeCredits() {
-    const credit = document.getElementById("credits-button");
-    addHoverStyleText(credit, "Credits of this site");
-    credit.addEventListener("click", () => {
+    const credits = document.getElementById("credits-button");
+    addHoverStyleText(credits, "Credits of this site");
+    credits.addEventListener("click", () => {
         window.location.href = "../Credits/index.html";
+    });
+}
+
+function initializeGithub() {
+    const github = document.getElementById("github-button");
+    addHoverStyleText(github, "Source code of this site on GitHub");
+    github.addEventListener("click", () => {
+        window.location.href = "https://github.com/Rostmoment/BBCR-Map";
     });
 }
 
@@ -29,4 +37,5 @@ function initializeStyles() {
 }
 
 initializeCredits();
+initializeGithub();
 initializeStyles();

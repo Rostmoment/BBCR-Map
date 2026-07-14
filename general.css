@@ -17,12 +17,18 @@ h1, h2, h3, h4, h5, h6, p, div, span, pre {
     cursor: pointer;
 }
 
+.image-button img {
+    vertical-align: middle; 
+}
+
 .image-button .hover-img {
     display: none;
 }
+
 .image-button:hover .default-img {
     display: none;
 }
+
 .image-button:hover .hover-img {
-    display: block;
+    display: inline-block; 
 }
