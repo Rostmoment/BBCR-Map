@@ -1,6 +1,13 @@
 const mapElement = document.getElementById("map");
+const addedCells = [];
 
 function addCell(x, y, type, room) {
+    if (addedCells.some(([cx, cy]) => cx === x && cy === y)) {
+        console.log(`Cell ${x};${y} has already been added! Skipping it...`)
+        return;
+    }
+
+    addedCells.push([x, y]);
     const cell = document.createElement("div");
 
     cell.classList.add("cell");
@@ -14,6 +21,8 @@ function addCell(x, y, type, room) {
     cell.dataset.room = room;
 
     mapElement.appendChild(cell);
+
+    return cell;
 }
 
 
@@ -148,4 +157,57 @@ function initializeMinorRooms() {
         [24, 20], [25, 20]
     ];
     addCells2DArray(cells, FloorType.Secret, Rooms.BladderRoom);
+}
+
+function initializeHallway() {
+    let cells = [];
+
+    for (let i = 4; i < 39; i++)
+        cells.push([6, i]); // East hallway
+
+    for (let i = 6; i < 29; i++)
+    {
+        if (i != 17) // Spawn cell
+            cells.push([i, 39]); // North hallway
+    }
+
+    for (let i = 38; i > 5;  i--)
+        cells.push([28, i]); // West hallway
+
+
+    for (let i = 38; i > 25; i--)
+        cells.push([17, i]);
+
+    for (let i = 7; i < 17; i++)
+        cells.push([i, 26]); // Faculty 2 vending hall
+
+    for (let i = 18; i < 23; i++)
+        cells.push([i, 26]); // Class 3 hallway
+
+    for (let i = 26; i < 39; i++)
+        cells.push([23, i]); // Closet hallway
+
+    // Two turns hallway
+    for (let i = 25; i > 19; i--)
+        cells.push([14, i]);
+
+    for (let i = 13; i > 9; i--)
+        cells.push([i, 20]);
+
+    for (let i = 19; i > 15; i--)
+        cells.push([10, i]);
+
+    for (let i = 7; i < 20; i++)
+        cells.push([i, 15]) // Classroom 4 hallway
+
+    for (let i = 25; i > 5; i--)
+        cells.push([20, i]); // Office hallway
+
+    for (let i = 21; i < 28; i++)
+        cells.push([i, 6]); // Connect west and office hallways
+
+    addCells2DArray(cells, FloorType.Hall, Rooms.Hall);
+
+    const cell = addCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
+
 }

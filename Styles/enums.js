@@ -14,13 +14,15 @@ const Rooms = Object.freeze({
     Faculty5: "Faculty Five",
 
     Closet: "Gotta Sweep Closet",
-    BladderRoom: "Bladder Room"
+    Hall: "Hallway",
+    BladderRoom: "Bladder Room",
 });
 
 
 const FloorType = Object.freeze({
-    BlueCarpet: "blue-carpet-cell",
     RedCarpet: "red-carpet-cell",
+    GreenCarpet: "green-carpet-cell",
+    BlueCarpet: "blue-carpet-cell",
     Hall: "hall-cell",
     Unknown: "unknown-cell",
     Secret: "secret-cell"

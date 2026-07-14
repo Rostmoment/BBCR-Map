@@ -81,13 +81,18 @@ body::before {
     background-image: url("Textures/Placeholder.png");
 }
 
+.red-carpet-cell {
+    background-image: url("Textures/RedCarpet.png");
+}
+
+.green-carpet-cell {
+    background-image: url("Textures/GreenCarpet.png");
+}
+
 .blue-carpet-cell {
     background-image: url("Textures/BlueCarpet.png");
 }
 
-.red-carpet-cell {
-    background-image: url("Textures/RedCarpet.png");
-}
 
 .hall-cell {
     background-image: url("Textures/Hall.png");
