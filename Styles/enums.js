@@ -17,8 +17,12 @@ const Rooms = Object.freeze({
     Office: "Principal Office",
     Cafeteria: "Cafeteria",
     Hall: "Hallway",
+    Exit: "Exit",
+    Outside: "Outside",
 
-    BladderRoom: "Bladder Room"
+    BladderRoom: "Bladder Room",
+    NonCannon: "Non Canon Room",
+    Basement: "Basement Room"
 });
 
 
@@ -28,6 +32,8 @@ const FloorType = Object.freeze({
     BlueCarpet: "blue-carpet-cell",
     Cafeteria: "cafeteria-cell",
     Hall: "hall-cell",
+    Grass: "grass-cell",
     Unknown: "unknown-cell",
-    Secret: "secret-cell"
+    Secret: "secret-cell",
+    NonCannon: "non-cannon-cell"
 });

@@ -1,6 +1,6 @@
 :root {
     --cells-count-x: 34;
-    --cells-count-y: 46;
+    --cells-count-y: 42;
     --cell-size: 64px;
 }
 
@@ -101,10 +101,17 @@ body::before {
     background-image: url("Textures/Hall.png");
 }
 
+.grass-cell {
+    background-image: url("Textures/Grass.png");
+}
+
 .secret-cell {
     background-image: url("Textures/Secret.png");
 }
 
+.non-cannon-cell {
+    background-image: url("Textures/NonCanon.png");
+}
 
 
 @keyframes shimmer {

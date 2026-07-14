@@ -11,7 +11,12 @@ document.head.appendChild(newFavicon);
 
 initZoom();
 
-initializeAllClassrooms();
-initializeAllFaculties();
+initializeClassrooms();
+initializeFaculties();
 initializeMinorRooms();
+initializeExits();
 initializeHallway();
+
+if (style == "Demo") {
+    initializeOnlyDemo();
+}
