@@ -12,3 +12,4 @@ document.head.appendChild(newFavicon);
 initZoom();
 
 initializeAllClassrooms();
+initializeAllFaculties();

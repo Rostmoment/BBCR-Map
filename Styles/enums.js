@@ -17,6 +17,9 @@ const Faculty = Object.freeze({
 });
 
 const FloorTypes = Object.freeze({
-    BlueCarpet: "blue-carpet",
-    Hall: "hall"
+    BlueCarpet: "blue-carpet-cell",
+    RedCarpet: "red-carpet-cell",
+    Hall: "hall-cell",
+    Unknown: "unknown-cell",
+    Secret: "secret-cell"
 });

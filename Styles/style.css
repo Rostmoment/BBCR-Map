@@ -41,7 +41,6 @@ body::before {
     transform-origin: center center;
     transition: transform 0.1s ease-out;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -82,8 +81,20 @@ body::before {
     background-image: url("Textures/Placeholder.png");
 }
 
-.blue-carpet {
+.blue-carpet-cell {
     background-image: url("Textures/BlueCarpet.png");
+}
+
+.red-carpet-cell {
+    background-image: url("Textures/RedCarpet.png");
+}
+
+.hall-cell {
+    background-image: url("Textures/Hall.png");
+}
+
+.secret-cell {
+    background-image: url("Textures/Secret.png");
 }
 
 
