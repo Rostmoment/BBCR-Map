@@ -4,17 +4,12 @@
     --cell-size: 64px;
 }
 
-body {
-    zoom: 0.25;
-    background: radial-gradient(ellipse at 50% 30%, #1a1a2e 0%, #0d0d14 70%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
-    overflow-x: hidden;
-    overflow: auto;
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, #1a1a2e 0%, #0d0d14 70%);
 }
 
 body::before {
@@ -29,17 +24,28 @@ body::before {
     background: radial-gradient(circle at 20% 40%, rgba(100, 150, 255, 0.04) 0%, transparent 50%), radial-gradient(circle at 75% 30%, rgba(180, 120, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 50% 70%, rgba(255, 130, 160, 0.03) 0%, transparent 50%);
 }
 
+.viewport {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    touch-action: none; 
+    cursor: url("../CursorGrab.png"), grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.viewport.dragging {
+    cursor: url("../CursorGrabbing.png"), grabbing;
+}
 
 .map-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    min-height: 100vh;
-    overflow: hidden;
-    position: relative;
-    transform-origin: center center;
-    transition: transform 0.1s ease-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    will-change: transform;
+    padding: 20px;
+    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
@@ -107,18 +113,6 @@ body::before {
     background-image: url("Textures/NonCanon.png");
 }
 
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%) rotate(45deg);
-    }
-
-    100% {
-        transform: translateX(100%) rotate(45deg);
-    }
-}
-
-
 .zoom-controls {
     position: fixed;
     right: 30px;
@@ -129,20 +123,23 @@ body::before {
     z-index: 1000;
 }
 
-.zoom-level {
-    position: fixed;
-    right: 30px;
-    bottom: 100px;
-    background: rgba(0, 0, 0, 0.7);
+.zoom-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 22px;
+    line-height: 1;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
+    transition: background 0.15s ease;
 }
+
+.zoom-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
 
 @media (max-width: 768px) {
     :root {

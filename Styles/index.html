@@ -1,18 +1,24 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../hideScroll.css">
     <link rel="stylesheet" href="../general.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="map-wrapper">
-        <div id="map"></div>
+    <div class="viewport" id="viewport">
+        <div class="map-wrapper" id="mapWrapper">
+            <div id="map"></div>
+        </div>
     </div>
 
+    <div class="zoom-controls">
+        <button class="zoom-btn" data-zoom-in>+</button>
+        <button class="zoom-btn" data-zoom-out>−</button>
+        <button class="zoom-btn" data-zoom-reset>⤢</button>
+    </div>
 
     <script src="enums.js"></script>
     <script src="zoom.js"></script>
