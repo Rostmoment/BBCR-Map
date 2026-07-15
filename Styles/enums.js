@@ -30,10 +30,9 @@ const FloorType = Object.freeze({
     RedCarpet: "red-carpet-cell",
     GreenCarpet: "green-carpet-cell",
     BlueCarpet: "blue-carpet-cell",
-    Cafeteria: "cafeteria-cell",
     Hall: "hall-cell",
+    DarkHall: "dark-hall-cell",
     Grass: "grass-cell",
     Unknown: "unknown-cell",
-    Secret: "secret-cell",
     NonCannon: "non-cannon-cell"
 });

@@ -50,7 +50,6 @@ body::before {
     display: grid;
     grid-template-columns: repeat(var(--cells-count-x), var(--cell-size));
     grid-template-rows: repeat(var(--cells-count-y), var(--cell-size));
-    gap: 2px;
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     padding: 2px;
     border-radius: 12px;
@@ -60,12 +59,11 @@ body::before {
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
+    box-sizing: border-box;
     background: linear-gradient(145deg, #f8f9fa, #e9ecef);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
-    border: 1px solid #5a9ee9;
     transition: all 0.15s ease;
     position: relative;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -93,20 +91,16 @@ body::before {
     background-image: url("Textures/BlueCarpet.png");
 }
 
-.cafeteria-cell {
-    background-image: url("Textures/Cafeteria.png");
-}
-
 .hall-cell {
     background-image: url("Textures/Hall.png");
 }
 
-.grass-cell {
-    background-image: url("Textures/Grass.png");
+.dark-hall-cell {
+    background-image: url("Textures/DarkHall.png");
 }
 
-.secret-cell {
-    background-image: url("Textures/Secret.png");
+.grass-cell {
+    background-image: url("Textures/Grass.png");
 }
 
 .non-cannon-cell {
