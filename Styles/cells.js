@@ -1,4 +1,4 @@
-const borderStyle = "3px solid";
+const borderStyle = "6px solid";
 const wallColor = "black";
 const windowColor = "white";
 const doorColor = "blue";

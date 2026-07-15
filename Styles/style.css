@@ -1,7 +1,7 @@
 :root {
     --cells-count-x: 34;
     --cells-count-y: 42;
-    --cell-size: 64px;
+    --cell-size: 128px;
 }
 
 html, body {
