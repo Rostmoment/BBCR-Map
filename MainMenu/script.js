@@ -26,7 +26,7 @@ function initializeStyle(elementId, name) {
     const element = document.getElementById(elementId);
     addHoverStyleText(element, `${name} Style`);
     element.addEventListener("click", () => {
-        window.location.href = `../Styles/index.html?style=${name}`;
+        window.location.href = `../Map/index.html?style=${name}`;
     });
 }
 function initializeStyles() {
