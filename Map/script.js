@@ -1,6 +1,6 @@
 const style = new URLSearchParams(window.location.search).get("style");
 
-document.title = `${style} Style`;
+document.title = `${style} Style Map`;
 
 const newFavicon = document.createElement("link");
 newFavicon.rel = "icon";
@@ -11,14 +11,12 @@ document.head.appendChild(newFavicon);
 
 initZoom();
 
-initializeClassrooms();
-initializeFaculties();
-initializeMinorRooms();
-initializeExits();
-initializeHallway();
+const styles = new Map();
+styles.set("classic", ClassicStyle);
+styles.set("party", PartyStyle);
+styles.set("demo", DemoStyle);
+styles.set("null", NullStyle);
 
-if (style == "Demo") {
-    initializeOnlyDemo();
-}
-
-addDoors();
+const styleClass = styles.get(style.toLowerCase());;
+const instance = new styleClass(style);
+instance.initialize();

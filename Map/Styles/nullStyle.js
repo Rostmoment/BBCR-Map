@@ -1,0 +1,3 @@
+class NullStyle extends BaseStyle {
+
+}

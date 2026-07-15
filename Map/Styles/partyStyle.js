@@ -1,0 +1,3 @@
+class PartyStyle extends BaseStyle {
+
+}

@@ -1,0 +1,3 @@
+class ClassicStyle extends BaseStyle {
+
+}
