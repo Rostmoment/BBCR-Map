@@ -2,6 +2,7 @@ const borderStyle = "3px solid";
 const wallColor = "black";
 const windowColor = "white";
 const doorColor = "blue";
+const swingDoorColor = "yellow";
 
 const mapElement = document.getElementById("map");
 const addedCells = new Map();
@@ -114,17 +115,14 @@ function addTopBorder(cell, color) {
     if (cell)
         cell.style.borderTop = `${borderStyle} ${color}`;
 }
-
 function addBottomBorder(cell, color) {
     if (cell)
         cell.style.borderBottom = `${borderStyle} ${color}`;
 }
-
 function addLeftBorder(cell, color) {
     if (cell)
         cell.style.borderLeft = `${borderStyle} ${color}`;
 }
-
 function addRightBorder(cell, color) {
     if (cell)
         cell.style.borderRight = `${borderStyle} ${color}`;
@@ -221,4 +219,39 @@ function initializeHallway() {
 function initializeOnlyDemo() {
     addCells2DArray(createRectangularArea(8, 27, 3, 3), FloorType.NonCannon, Rooms.NonCannon);
     addCells2DArray(createRectangularArea(16, 19, 3, 1), FloorType.DarkHall, Rooms.Basement);
+}
+
+function addDoors() {
+
+    // Front locked swing door
+    addTopBorder(getCell(17, 35), swingDoorColor);
+    addBottomBorder(getCell(17, 34), swingDoorColor);
+
+    // Left locked swing door
+    addLeftBorder(getCell(13, 39), swingDoorColor);
+    addRightBorder(getCell(12, 39), swingDoorColor);
+
+    // Right locked swing door
+    addLeftBorder(getCell(22, 39), swingDoorColor);
+    addRightBorder(getCell(21, 39), swingDoorColor);
+
+    // Principal swing door
+    addTopBorder(getCell(20, 20), swingDoorColor);
+    addBottomBorder(getCell(20, 19), swingDoorColor);
+
+    // Two turns hallway swing door
+    addLeftBorder(getCell(15, 20), swingDoorColor);
+    addRightBorder(getCell(14, 20), swingDoorColor);
+
+    // Long hallway swing door
+    addLeftBorder(getCell(24, 6), swingDoorColor);
+    addRightBorder(getCell(23, 6), swingDoorColor);
+
+    // Long hall cafeteria swing door
+    addLeftBorder(getCell(20, 10), swingDoorColor);
+    addRightBorder(getCell(19, 10), swingDoorColor);
+
+    // Classroom 5  cafeteria swing door
+    addLeftBorder(getCell(7, 10), swingDoorColor);
+    addRightBorder(getCell(6, 10), swingDoorColor);
 }

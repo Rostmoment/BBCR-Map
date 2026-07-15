@@ -20,3 +20,5 @@ initializeHallway();
 if (style == "Demo") {
     initializeOnlyDemo();
 }
+
+addDoors();
