@@ -251,7 +251,35 @@ function addDoors() {
     addLeftBorder(getCell(20, 10), swingDoorColor);
     addRightBorder(getCell(19, 10), swingDoorColor);
 
-    // Classroom 5  cafeteria swing door
+    // Classroom 5 cafeteria swing door
     addLeftBorder(getCell(7, 10), swingDoorColor);
     addRightBorder(getCell(6, 10), swingDoorColor);
+
+    // Classroom 1 door
+    addLeftBorder(getCell(17, 37), doorColor);
+    addRightBorder(getCell(16, 37), doorColor);
+
+    // Classroom 2 door
+    addLeftBorder(getCell(18, 36), doorColor);
+    addRightBorder(getCell(17, 36), doorColor);
+
+    // Classroom 3 door
+    addTopBorder(getCell(19, 27), doorColor);
+    addBottomBorder(getCell(19, 26), doorColor);
+
+    // Classroom 4 door
+    addTopBorder(getCell(14, 16), doorColor);
+    addBottomBorder(getCell(14, 15), doorColor);
+
+    // Classroom 5 door
+    addLeftBorder(getCell(6, 12), doorColor);
+    addRightBorder(getCell(5, 12), doorColor);
+
+    // Classroom 6 door
+    addLeftBorder(getCell(28, 9), doorColor);
+    addRightBorder(getCell(27, 9), doorColor);
+
+    // Classroom 7 door
+    addLeftBorder(getCell(28, 23), doorColor);
+    addRightBorder(getCell(27, 23), doorColor);
 }
