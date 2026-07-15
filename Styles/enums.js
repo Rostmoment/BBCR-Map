@@ -17,8 +17,15 @@ const Rooms = Object.freeze({
     Office: "Principal Office",
     Cafeteria: "Cafeteria",
     Hall: "Hallway",
-    Exit: "Exit",
-    Outside: "Outside",
+
+    ExitNorth: "Exit North",
+    ExitWest: "Exit West",
+    ExitEast: "Exit East",
+    ExitSouth: "Exit South",
+    OutsideNorth: "Outside North",
+    OutsideWest: "Outside West",
+    OutsideEast: "Outside East",
+    OutsideSouth: "Outside South",
 
     BladderRoom: "Bladder Room",
     NonCannon: "Non Canon Room",

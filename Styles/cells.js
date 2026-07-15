@@ -152,16 +152,16 @@ function initializeMinorRooms() {
 }
 function initializeExits() {
     // Outsides
-    addCells2DArray(createRectangularArea(11, 0, 5, 5), FloorType.Grass, Rooms.Outside); // North
-    addCells2DArray(createRectangularArea(0, 18, 5, 5), FloorType.Grass, Rooms.Outside); // West
-    addCells2DArray(createRectangularArea(30, 19, 4, 5), FloorType.Grass, Rooms.Outside); // East
-    addCells2DArray(createRectangularArea(15, 41, 5, 2), FloorType.Grass, Rooms.Outside); // South
+    addCells2DArray(createRectangularArea(11, 0, 5, 5), FloorType.Grass, Rooms.OutsideNorth); // North
+    addCells2DArray(createRectangularArea(0, 18, 5, 5), FloorType.Grass, Rooms.OutsideWest); // West
+    addCells2DArray(createRectangularArea(30, 19, 4, 5), FloorType.Grass, Rooms.OutsideEast); // East
+    addCells2DArray(createRectangularArea(15, 41, 5, 2), FloorType.Grass, Rooms.OutsideSouth); // South
 
     // 3 exits tiles
-    addCells2DArray(createRectangularArea(12, 5, 3, 1), FloorType.Hall, Rooms.Exit); // North
-    addCells2DArray(createRectangularArea(5, 19, 1, 3), FloorType.Hall, Rooms.Exit); // West
-    addCells2DArray(createRectangularArea(29, 20, 1, 3), FloorType.Hall, Rooms.Exit); // East
-    addCells2DArray(createRectangularArea(16, 40, 3, 1), FloorType.Hall, Rooms.Exit); // South
+    addCells2DArray(createRectangularArea(12, 5, 3, 1), FloorType.Hall, Rooms.ExitNorth); // North
+    addCells2DArray(createRectangularArea(5, 19, 1, 3), FloorType.Hall, Rooms.ExitWest); // West
+    addCells2DArray(createRectangularArea(29, 20, 1, 3), FloorType.Hall, Rooms.ExitEast); // East
+    addCells2DArray(createRectangularArea(16, 40, 3, 1), FloorType.Hall, Rooms.ExitSouth); // South
 }
 function initializeHallway() {
     let cells = [];
@@ -282,4 +282,52 @@ function addDoors() {
     // Classroom 7 door
     addLeftBorder(getCell(28, 23), doorColor);
     addRightBorder(getCell(27, 23), doorColor);
+
+    // Faculty 1 door
+    addTopBorder(getCell(9, 39), doorColor);
+    addBottomBorder(getCell(9, 38), doorColor);
+
+    // Door in faculties 1 and 2
+    addLeftBorder(getCell(12, 33), doorColor);
+    addRightBorder(getCell(11, 33), doorColor);
+
+    // Faculty 2 door
+    addTopBorder(getCell(14, 27), doorColor);
+    addBottomBorder(getCell(14, 26), doorColor);
+
+    // Faculty 3 door
+    addLeftBorder(getCell(28, 30), doorColor);
+    addRightBorder(getCell(27, 30), doorColor);
+
+    // Faculty 4 door
+    addLeftBorder(getCell(21, 16), doorColor);
+    addRightBorder(getCell(20, 16), doorColor);
+
+    // Faculty 5 door
+    addLeftBorder(getCell(7, 23), doorColor);
+    addRightBorder(getCell(6, 23), doorColor);
+
+    // Office door
+    addLeftBorder(getCell(20, 23), doorColor);
+    addRightBorder(getCell(19, 23), doorColor);
+
+    // Closet door
+    addLeftBorder(getCell(24, 36), doorColor);
+    addRightBorder(getCell(23, 36), doorColor);
+
+    // North exit
+    addTopBorder(getCell(13, 5), swingDoorColor);
+    addBottomBorder(getCell(13, 4), swingDoorColor);
+
+    // West exit
+    addLeftBorder(getCell(5, 20), swingDoorColor);
+    addRightBorder(getCell(4, 20), swingDoorColor);
+
+    // South exit
+    addTopBorder(getCell(17, 41), swingDoorColor);
+    addBottomBorder(getCell(17, 40), swingDoorColor);
+
+    // East exit
+    addLeftBorder(getCell(30, 21), swingDoorColor);
+    addRightBorder(getCell(29, 21), swingDoorColor);
 }
