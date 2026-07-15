@@ -112,18 +112,27 @@ function createRectangularArea(startX, startY, width, height) {
 }
 
 function addTopBorder(cell, color) {
-    if (cell)
-        cell.style.borderTop = `${borderStyle} ${color}`;
+    cell.style.borderTop = `${borderStyle} ${color}`;
 }
 function addBottomBorder(cell, color) {
-    if (cell)
-        cell.style.borderBottom = `${borderStyle} ${color}`;
+    cell.style.borderBottom = `${borderStyle} ${color}`;
 }
 function addLeftBorder(cell, color) {
-    if (cell)
-        cell.style.borderLeft = `${borderStyle} ${color}`;
+    cell.style.borderLeft = `${borderStyle} ${color}`;
 }
 function addRightBorder(cell, color) {
-    if (cell)
-        cell.style.borderRight = `${borderStyle} ${color}`;
+    cell.style.borderRight = `${borderStyle} ${color}`;
+}
+
+function removeTopBorder(cell) {
+    cell.style.borderTop = "none";
+}
+function removeBottomBorder(cell) {
+    cell.style.borderBottom = "none";
+}
+function removeRightBorder(cell) {
+    cell.style.borderRight = "none";
+}
+function removeLeftBorder(cell) {
+    cell.style.borderLeft = "none";
 }

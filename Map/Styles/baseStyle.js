@@ -89,9 +89,7 @@ class BaseStyle {
             cells.push([i, 6]); // Connect west and office hallways
 
         addCells2DArray(cells, FloorType.Hall, Rooms.Hall);
-
-        const cell = getOrAddCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
-
+        getOrAddCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
     }
 
     #initializeDoors() {
@@ -204,6 +202,113 @@ class BaseStyle {
         addRightBorder(getCell(29, 21), swingDoorColor);
     }
 
+    #initializeWindows() {
+        // South exit
+        addBottomBorder(getCell(16, 40), windowColor);
+        addBottomBorder(getCell(18, 40), windowColor);
+        addTopBorder(getCell(16, 41), windowColor);
+        addTopBorder(getCell(18, 41), windowColor);
+
+        // North exit
+        addBottomBorder(getCell(12, 4), windowColor);
+        addBottomBorder(getCell(14, 4), windowColor);
+        addTopBorder(getCell(12, 5), windowColor);
+        addTopBorder(getCell(14, 5), windowColor);
+
+        // West exit
+        addLeftBorder(getCell(5, 19), windowColor);
+        addLeftBorder(getCell(5, 21), windowColor);
+        addRightBorder(getCell(4, 19), windowColor);
+        addRightBorder(getCell(4, 21), windowColor);
+
+        // East exit
+        addLeftBorder(getCell(30, 20), windowColor);
+        addLeftBorder(getCell(30, 22), windowColor);
+        addRightBorder(getCell(29, 20), windowColor);
+        addRightBorder(getCell(29, 22), windowColor);
+
+        // Cafeteria 
+        addBottomBorder(getCell(13, 14), windowColor);
+        addTopBorder(getCell(13, 15), windowColor);
+
+        // Classroom 4 
+        addBottomBorder(getCell(13, 19), windowColor);
+        addTopBorder(getCell(13, 20), windowColor);
+
+        // Classroom 7
+        addBottomBorder(getCell(23, 25), windowColor);
+        addTopBorder(getCell(23, 26), windowColor);
+
+        // Faculty 3 
+        addRightBorder(getCell(23, 30), windowColor);
+        addLeftBorder(getCell(24, 30), windowColor);
+
+        // Faculty 4
+        addRightBorder(getCell(27, 18), windowColor);
+        addLeftBorder(getCell(28, 18), windowColor);
+
+        // Faculty 5
+        addBottomBorder(getCell(12, 20), windowColor);
+        addTopBorder(getCell(12, 21), windowColor);
+
+        // Principal office
+        addBottomBorder(getCell(17, 25), windowColor);
+        addTopBorder(getCell(17, 26), windowColor);
+
+        addRightBorder(getCell(15, 21), windowColor);
+        addLeftBorder(getCell(16, 21), windowColor);
+
+        addRightBorder(getCell(19, 25), windowColor);
+        addLeftBorder(getCell(20, 25), windowColor);
+
+        addRightBorder(getCell(19, 22), windowColor);
+        addLeftBorder(getCell(20, 22), windowColor);
+    }
+
+    #removeNotNeededBorders() {
+        // Spawn point
+        const spawnCell = getCell(17, 39); 
+        removeTopBorder(spawnCell);
+        removeBottomBorder(spawnCell);
+        removeRightBorder(spawnCell);
+        removeLeftBorder(spawnCell);
+
+        removeBottomBorder(getCell(17, 38));
+        removeLeftBorder(getCell(18, 39));
+        removeRightBorder(getCell(16, 39));
+
+        // South exit tiles
+        removeBottomBorder(getCell(18, 39));
+        removeBottomBorder(getCell(16, 39));
+        removeTopBorder(getCell(16, 40));
+        removeTopBorder(getCell(17, 40));
+        removeTopBorder(getCell(18, 40))
+
+        // East exit tiles
+        removeLeftBorder(getCell(29, 20));
+        removeLeftBorder(getCell(29, 21));
+        removeLeftBorder(getCell(29, 22));
+        removeRightBorder(getCell(28, 20));
+        removeRightBorder(getCell(28, 21));
+        removeRightBorder(getCell(28, 22));
+
+        // West exit tiles
+        removeLeftBorder(getCell(6, 19));
+        removeLeftBorder(getCell(6, 20));
+        removeLeftBorder(getCell(6, 21));
+        removeRightBorder(getCell(5, 19));
+        removeRightBorder(getCell(5, 20));
+        removeRightBorder(getCell(5, 21));
+
+        // North exit tiles
+        removeBottomBorder(getCell(12, 5));
+        removeBottomBorder(getCell(13, 5));
+        removeBottomBorder(getCell(14, 5));
+        removeTopBorder(getCell(12, 6));
+        removeTopBorder(getCell(13, 6));
+        removeTopBorder(getCell(14, 6));
+    }
+
     initialize() {
         this.#initializeHallway();
 
@@ -214,5 +319,8 @@ class BaseStyle {
         this.#initializeExits();
 
         this.#initializeDoors();
+        this.#initializeWindows();
+
+        this.#removeNotNeededBorders();
     }
 }
