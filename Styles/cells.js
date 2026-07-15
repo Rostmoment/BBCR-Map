@@ -1,13 +1,14 @@
 const mapElement = document.getElementById("map");
-const addedCells = [];
+const addedCells = new Map();
 
-function addCell(x, y, type, room) {
-    if (addedCells.some(([cx, cy]) => cx === x && cy === y)) {
-        console.log(`Cell ${x};${y} has already been added! Skipping it...`)
-        return;
+function getOrAddCell(x, y, type, room) {
+    const key = `${x};${y}`;
+
+    if (addedCells.has(key)) {
+        console.log(`Cell ${x};${y} has already been added! Returning it...`)
+        return addedCells.get(key);
     }
 
-    addedCells.push([x, y]);
     const cell = document.createElement("div");
 
     cell.classList.add("cell");
@@ -22,12 +23,13 @@ function addCell(x, y, type, room) {
 
     mapElement.appendChild(cell);
 
+    addedCells.set(key, cell);
     return cell;
 }
 
 
 function addCells2DArray(cells, type, room) {
-    cells.forEach(([x, y]) => addCell(x, y, type, room));
+    cells.forEach(([x, y]) => getOrAddCell(x, y, type, room));
 }
 
 function createRectangularArea(startX, startY, width, height) {
@@ -124,7 +126,7 @@ function initializeHallway() {
 
     addCells2DArray(cells, FloorType.Hall, Rooms.Hall);
 
-    const cell = addCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
+    const cell = getOrAddCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
 
 }
 
