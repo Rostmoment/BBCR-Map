@@ -9,7 +9,6 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    background: radial-gradient(ellipse at 50% 30%, #1a1a2e 0%, #0d0d14 70%);
 }
 
 body::before {
@@ -21,7 +20,6 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    background: radial-gradient(circle at 20% 40%, rgba(100, 150, 255, 0.04) 0%, transparent 50%), radial-gradient(circle at 75% 30%, rgba(180, 120, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 50% 70%, rgba(255, 130, 160, 0.03) 0%, transparent 50%);
 }
 
 .viewport {
@@ -46,20 +44,14 @@ body::before {
     will-change: transform;
     padding: 20px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #map {
     display: grid;
     grid-template-columns: repeat(var(--cells-count-x), var(--cell-size));
     grid-template-rows: repeat(var(--cells-count-y), var(--cell-size));
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     padding: 2px;
     border-radius: 12px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cell {
@@ -82,35 +74,35 @@ body::before {
 }
 
 .unknown-cell {
-    background-image: url("Textures/Placeholder.png");
+    background-image: url("Floors/Placeholder.png");
 }
 
 .red-carpet-cell {
-    background-image: url("Textures/RedCarpet.png");
+    background-image: url("Floors/RedCarpet.png");
 }
 
 .green-carpet-cell {
-    background-image: url("Textures/GreenCarpet.png");
+    background-image: url("Floors/GreenCarpet.png");
 }
 
 .blue-carpet-cell {
-    background-image: url("Textures/BlueCarpet.png");
+    background-image: url("Floors/BlueCarpet.png");
 }
 
 .hall-cell {
-    background-image: url("Textures/Hall.png");
+    background-image: url("Floors/Hall.png");
 }
 
 .dark-hall-cell {
-    background-image: url("Textures/DarkHall.png");
+    background-image: url("Floors/DarkHall.png");
 }
 
 .grass-cell {
-    background-image: url("Textures/Grass.png");
+    background-image: url("Floors/Grass.png");
 }
 
 .non-cannon-cell {
-    background-image: url("Textures/NonCanon.png");
+    background-image: url("Floors/NonCanon.png");
 }
 
 .zoom-controls {

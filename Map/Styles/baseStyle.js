@@ -3,7 +3,7 @@ class BaseStyle {
         this.name = name;
     }
 
-    #initializeClassrooms() {
+    _initializeClassrooms() {
         addCells2DArray(createRectangularArea(12, 35, 5, 4), FloorType.BlueCarpet, Rooms.Classroom1);
         addCells2DArray(createRectangularArea(18, 35, 5, 4), FloorType.BlueCarpet, Rooms.Classroom2);
         addCells2DArray(createRectangularArea(18, 27, 5, 5), FloorType.BlueCarpet, Rooms.Classroom3);
@@ -13,7 +13,7 @@ class BaseStyle {
         addCells2DArray(createRectangularArea(21, 21, 7, 5), FloorType.BlueCarpet, Rooms.Classroom7);
     }
 
-    #initializeFaculties() {
+    _initializeFaculties() {
         addCells2DArray(createRectangularArea(7, 32, 5, 7), FloorType.RedCarpet, Rooms.Faculty1);
         addCells2DArray(createRectangularArea(12, 27, 5, 7), FloorType.RedCarpet, Rooms.Faculty2);
         addCells2DArray(createRectangularArea(24, 28, 4, 6), FloorType.RedCarpet, Rooms.Faculty3);
@@ -21,14 +21,14 @@ class BaseStyle {
         addCells2DArray(createRectangularArea(7, 21, 7, 5), FloorType.RedCarpet, Rooms.Faculty5);
     }
 
-    #initializeMinorRooms() {
+    _initializeMinorRooms() {
         addCells2DArray(createRectangularArea(24, 36, 2, 1), FloorType.BlueCarpet, Rooms.Closet);
         addCells2DArray(createRectangularArea(24, 19, 2, 2), FloorType.DarkHall, Rooms.BladderRoom);
         addCells2DArray(createRectangularArea(16, 21, 4, 5), FloorType.BlueCarpet, Rooms.Office);
         addCells2DArray(createRectangularArea(7, 6, 13, 9), FloorType.Hall, Rooms.Cafeteria);
     }
 
-    #initializeExits() {
+    _initializeExits() {
         // Outsides
         addCells2DArray(createRectangularArea(11, 0, 5, 5), FloorType.Grass, Rooms.OutsideNorth); // North
         addCells2DArray(createRectangularArea(0, 18, 5, 5), FloorType.Grass, Rooms.OutsideWest); // West
@@ -45,7 +45,7 @@ class BaseStyle {
         getOrAddCell(18, 40, FloorType.Hall, Rooms.ExitSouth);
     }
 
-    #initializeHallway() {
+    _initializeHallway() {
         let cells = [];
 
         for (let i = 4; i < 39; i++)
@@ -92,7 +92,7 @@ class BaseStyle {
         addCells2DArray(cells, FloorType.Hall, Rooms.Hall);
     }
 
-    #initializeDoors() {
+    _initializeDoors() {
         // Front locked swing door
         addTopBorder(getCell(17, 35), swingDoorColor);
         addBottomBorder(getCell(17, 34), swingDoorColor);
@@ -202,7 +202,7 @@ class BaseStyle {
         addRightBorder(getCell(29, 21), swingDoorColor);
     }
 
-    #initializeWindows() {
+    _initializeWindows() {
         // South exit
         addBottomBorder(getCell(16, 40), windowColor);
         addBottomBorder(getCell(18, 40), windowColor);
@@ -265,7 +265,7 @@ class BaseStyle {
         addLeftBorder(getCell(20, 22), windowColor);
     }
 
-    #removeNotNeededBorders() {
+    _removeNotNeededBorders() {
         // Spawn point
         const spawnCell = getCell(17, 39); 
         removeTopBorder(spawnCell);
@@ -309,18 +309,24 @@ class BaseStyle {
         removeTopBorder(getCell(14, 6));
     }
 
+    _initializeSkybox() {
+        document.body.style.backgroundImage = "url('Skyboxes/Classic.png')";
+    }
+
     initialize() {
-        this.#initializeHallway();
+        this._initializeHallway();
 
-        this.#initializeClassrooms();
-        this.#initializeFaculties();
+        this._initializeClassrooms();
+        this._initializeFaculties();
 
-        this.#initializeMinorRooms();
-        this.#initializeExits();
+        this._initializeMinorRooms();
+        this._initializeExits();
 
-        this.#initializeDoors();
-        this.#initializeWindows();
+        this._initializeDoors();
+        this._initializeWindows();
 
-        this.#removeNotNeededBorders();
+        this._removeNotNeededBorders();
+
+        this._initializeSkybox();
     }
 }
