@@ -46,6 +46,10 @@ function getOrAddCell(x, y, type, room) {
 
     mapElement.appendChild(cell);
 
+    cell.addEventListener("click", () => {
+        showInfo(cell);
+    });
+
     addedCells.set(key, cell);
     return cell;
 }
@@ -135,4 +139,25 @@ function removeRightBorder(cell) {
 }
 function removeLeftBorder(cell) {
     cell.style.borderLeft = "none";
+}
+
+function mapToGameCoordinates(x, y) {
+    return {
+        x: 5 + x * 10,
+        y: 425 - y * 10
+    }
+}
+
+function showInfo(cell) {
+    const title = document.getElementById("cell-info-title");
+    const info = document.getElementById("cell-info-info");
+    const x = cell.dataset.x;
+    const y = cell.dataset.y;
+
+    title.innerHTML = cell.dataset.room;
+
+    const game = mapToGameCoordinates(x, y);
+    info.innerHTML = `In game coordinates: (${game.x}; y; ${game.y})
+                      <br>
+                      In site map coordinates: (${x}; ${y})`;
 }

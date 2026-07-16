@@ -164,3 +164,13 @@ body::before {
         padding: 6px 12px;
     }
 }
+
+#cell-info {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

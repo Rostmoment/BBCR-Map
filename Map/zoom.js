@@ -4,6 +4,7 @@ const mapWrapper = document.getElementById("mapWrapper");
 const MIN_SCALE = 0.08;
 const MAX_SCALE = 4;
 const WHEEL_ZOOM_FACTOR = 0.00015;
+const DRAG_THRESHOLD = 8; 
 
 const state = { x: 0, y: 0, scale: 1 };
 
@@ -11,6 +12,8 @@ const activePointers = new Map();
 let panPointerId = null;
 let lastPanX = 0;
 let lastPanY = 0;
+let dragStartX = 0;
+let dragStartY = 0;
 let didDrag = false;
 
 let pinchStartDistance = 0;
@@ -83,7 +86,18 @@ function initZoom() {
     }, { passive: false });
 
     viewportElement.addEventListener("pointerdown", (e) => {
-        viewportElement.setPointerCapture(e.pointerId);
+
+       /*  
+           IMPORTANT: setPointerCapture is intentionally NOT used here.
+           It retargets derived mouse events (including click) to
+           the element that has captured the pointer—because of this, a click on a cell
+           would effectively be sent with `target = viewportElement`, rather than
+           target = cell, and the click handlers on the cells themselves would never
+           be triggered. Instead of capture, we listen for move/up events on the window
+           (see below) so that dragging continues to work outside
+           the viewport, but clicks still hit the actual element.
+        */
+
         activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
         didDrag = false;
 
@@ -91,6 +105,8 @@ function initZoom() {
             panPointerId = e.pointerId;
             lastPanX = e.clientX;
             lastPanY = e.clientY;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
             viewportElement.classList.add("dragging");
         } else if (activePointers.size === 2) {
             panPointerId = null;
@@ -100,7 +116,7 @@ function initZoom() {
         }
     });
 
-    viewportElement.addEventListener("pointermove", (e) => {
+    window.addEventListener("pointermove", (e) => {
         if (!activePointers.has(e.pointerId)) return;
         activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
@@ -118,7 +134,13 @@ function initZoom() {
         if (panPointerId === e.pointerId) {
             const dx = e.clientX - lastPanX;
             const dy = e.clientY - lastPanY;
-            if (Math.abs(dx) > 2 || Math.abs(dy) > 2) didDrag = true;
+
+            const totalDx = e.clientX - dragStartX;
+            const totalDy = e.clientY - dragStartY;
+            if (Math.abs(totalDx) > DRAG_THRESHOLD || Math.abs(totalDy) > DRAG_THRESHOLD) {
+                didDrag = true;
+            }
+
             state.x += dx;
             state.y += dy;
             lastPanX = e.clientX;
@@ -136,14 +158,15 @@ function initZoom() {
             panPointerId = remainingId;
             lastPanX = pos.x;
             lastPanY = pos.y;
+            dragStartX = pos.x;
+            dragStartY = pos.y;
         } else {
             panPointerId = null;
         }
     };
 
-    viewportElement.addEventListener("pointerup", releasePointer);
-    viewportElement.addEventListener("pointercancel", releasePointer);
-    viewportElement.addEventListener("pointerleave", releasePointer);
+    window.addEventListener("pointerup", releasePointer);
+    window.addEventListener("pointercancel", releasePointer);
 
     viewportElement.addEventListener("click", (e) => {
         if (didDrag) {
