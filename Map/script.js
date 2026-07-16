@@ -20,3 +20,8 @@ styles.set("null", NullStyle);
 const styleClass = styles.get(style.toLowerCase());;
 const instance = new styleClass(style);
 instance.initialize();
+
+const button = document.getElementById("back-button");
+button.addEventListener("click", () => {
+	window.location.href = "../index.html";
+});
