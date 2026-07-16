@@ -1,8 +1,10 @@
 const borderStyle = "6px solid";
+
 const wallColor = "black";
 const windowColor = "white";
 const doorColor = "blue";
 const swingDoorColor = "yellow";
+const portalPosterColor = "deeppink";
 
 const mapElement = document.getElementById("map");
 const addedCells = new Map();
