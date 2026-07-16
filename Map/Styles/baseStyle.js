@@ -39,7 +39,10 @@ class BaseStyle {
         addCells2DArray(createRectangularArea(12, 5, 3, 1), FloorType.Hall, Rooms.ExitNorth); // North
         addCells2DArray(createRectangularArea(5, 19, 1, 3), FloorType.Hall, Rooms.ExitWest); // West
         addCells2DArray(createRectangularArea(29, 20, 1, 3), FloorType.Hall, Rooms.ExitEast); // East
-        addCells2DArray(createRectangularArea(16, 40, 3, 1), FloorType.Hall, Rooms.ExitSouth); // South
+
+        getOrAddCell(16, 40, FloorType.Hall, Rooms.ExitSouth);
+        getOrAddCell(17, 40, FloorType.GreenCarpet, Rooms.ExitSouth);
+        getOrAddCell(18, 40, FloorType.Hall, Rooms.ExitSouth);
     }
 
     #initializeHallway() {
@@ -48,10 +51,8 @@ class BaseStyle {
         for (let i = 4; i < 39; i++)
             cells.push([6, i]); // West hallway
 
-        for (let i = 6; i < 29; i++) {
-            if (i != 17) // Spawn cell
-                cells.push([i, 39]); // South hallway
-        }
+        for (let i = 6; i < 29; i++)
+            cells.push([i, 39]); // South hallway
 
         for (let i = 38; i > 5; i--)
             cells.push([28, i]); // East hallway
@@ -89,7 +90,6 @@ class BaseStyle {
             cells.push([i, 6]); // Connect west and office hallways
 
         addCells2DArray(cells, FloorType.Hall, Rooms.Hall);
-        getOrAddCell(17, 39, FloorType.GreenCarpet, Rooms.Hall); // Spawn point
     }
 
     #initializeDoors() {
