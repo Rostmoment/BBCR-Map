@@ -2,6 +2,7 @@
     --cells-count-x: 34;
     --cells-count-y: 42;
     --cell-size: 128px;
+    --padding: 2px;
 }
 
 html, body {
@@ -50,7 +51,7 @@ body::before {
     display: grid;
     grid-template-columns: repeat(var(--cells-count-x), var(--cell-size));
     grid-template-rows: repeat(var(--cells-count-y), var(--cell-size));
-    padding: 2px;
+    padding: var(--padding);
     border-radius: 12px;
 }
 
@@ -157,19 +158,56 @@ body::before {
     }
 }
 
-#cell-info {
-    background-color: rgba(0, 0, 0, 0.6);
+#top-right-data {
     position: fixed;
-    top: 5px;
-    right: 10px;
+    right: 0px;
+    top: 0px;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: flex-end; 
+    z-index: 1000;
 }
+
+#top-right-data-wrapper {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#cell-info-container {
+    padding: 10px;
+    color: white;
+    pointer-events: none;
+}
+
 
 
 #back-button {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+
+#items {
+    display: grid;
+    grid-template-columns: repeat(var(--cells-count-x), var(--cell-size));
+    grid-template-rows: repeat(var(--cells-count-y), var(--cell-size));
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--padding);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.map-item {
+    width: auto;
+    height: auto;
+    max-width: var(--cell-size);
+    max-height: var(--cell-size);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    object-fit: contain;
+    place-self: center;
+    pointer-events: none;
 }

@@ -322,6 +322,10 @@ class BaseStyle {
         addCells2DArray(createRectangularArea(8, 27, 3, 3), FloorType.NonCannon, Rooms.NonCannon);
     }
 
+    _initializeItems() {
+
+    }
+
     initialize() {
         this._initializeHallway();
 
@@ -337,5 +341,6 @@ class BaseStyle {
         this._removeNotNeededBorders();
 
         this._initializeSkybox();
+        this._initializeItems();
     }
 }

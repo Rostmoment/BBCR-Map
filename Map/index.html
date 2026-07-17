@@ -11,6 +11,7 @@
     <div class="viewport" id="viewport">
         <div class="map-wrapper" id="mapWrapper">
             <div id="map"></div>
+            <div id="items"></div>
         </div>
     </div>
 
@@ -20,9 +21,17 @@
         <button class="zoom-btn" data-zoom-reset>⤢</button>
     </div>
 
-    <div id="cell-info">
-        <h1 id="cell-info-title"></h1>
-        <h3 id="cell-info-info"></h3>
+    <div id="top-right-data">
+        <div id="top-right-data-wrapper">
+            <div id="cell-info-container">
+                <h1 id="cell-info-title">—</h1>
+                <h3 id="cell-info-info">—</h3>
+            </div>
+            <div id="show-items-container">
+                <input type="checkbox" name="show-items-checkbox" id="show-items-checkbox" checked>
+                <label for="show-items-checkbox">Show Items</label>
+            </div>
+        </div>
     </div>
 
     <button class="image-button" type="button" id="back-button">
@@ -39,6 +48,7 @@
     <script src="enums.js"></script>
     <script src="zoom.js"></script>
     <script src="cells.js"></script>
+    <script src="items.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

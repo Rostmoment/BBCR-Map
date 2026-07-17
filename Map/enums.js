@@ -43,3 +43,21 @@ const FloorType = Object.freeze({
     Unknown: "unknown-cell",
     NonCannon: "non-cannon-cell"
 });
+
+
+const itemsFolder = "Items";
+const Items = Object.freeze({
+    AlarmClock: `${itemsFolder}/AlarmClock.png`,
+    BSODA: `${itemsFolder}/BSODA.png`,
+    DoorLock: `${itemsFolder}/DoorLock.png`,
+    Eraser: `${itemsFolder}/Eraser.png`,
+    Key: `${itemsFolder}/Key.png`,
+    NoSquee: `${itemsFolder}/NoSquee.png`,
+    Present: `${itemsFolder}/Present.png`,
+    Quarter: `${itemsFolder}/Quarter.png`,
+    SafetyScissors: `${itemsFolder}/SafetyScissors.png`,
+    Tape: `${itemsFolder}/Tape.png`,
+    Unknown: `${itemsFolder}/Unknown.png`,
+    Whistle: `${itemsFolder}/Whistle.png`,
+    Zesty: `${itemsFolder}/Zesty.png`
+});
