@@ -23,7 +23,6 @@ class BaseStyle {
 
     _initializeMinorRooms() {
         addCells2DArray(createRectangularArea(24, 36, 2, 1), FloorType.BlueCarpet, Rooms.Closet);
-        addCells2DArray(createRectangularArea(24, 19, 2, 2), FloorType.DarkHall, Rooms.BladderRoom);
         addCells2DArray(createRectangularArea(16, 21, 4, 5), FloorType.BlueCarpet, Rooms.Office);
         addCells2DArray(createRectangularArea(7, 6, 13, 9), FloorType.Hall, Rooms.Cafeteria);
     }
@@ -311,6 +310,16 @@ class BaseStyle {
 
     _initializeSkybox() {
         document.body.style.backgroundImage = "url('Skyboxes/Classic.png')";
+    }
+
+    _initializeBladderRoom() {
+        addCells2DArray(createRectangularArea(24, 19, 2, 2), FloorType.DarkHall, Rooms.BladderRoom);
+    }
+    _initializeBasementRoom() {
+        addCells2DArray(createRectangularArea(16, 19, 3, 1), FloorType.DarkHall, Rooms.Basement);
+    }
+    _initializeNonCanonRoom() {
+        addCells2DArray(createRectangularArea(8, 27, 3, 3), FloorType.NonCannon, Rooms.NonCannon);
     }
 
     initialize() {
