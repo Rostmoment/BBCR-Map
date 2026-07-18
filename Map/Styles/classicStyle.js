@@ -6,7 +6,6 @@ class ClassicStyle extends BaseStyle {
     }
 
 
-    // TODO: check if this is actually correct position and not just copy of null style item positions
     _initializeItems() {
 
         // Closet WD

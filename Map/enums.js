@@ -48,6 +48,7 @@ const FloorType = Object.freeze({
 const itemsFolder = "Items";
 const Items = Object.freeze({
     AlarmClock: `${itemsFolder}/AlarmClock.png`,
+    Boots: `${itemsFolder}/Boots.png`,
     BSODA: `${itemsFolder}/BSODA.png`,
     DoorLock: `${itemsFolder}/DoorLock.png`,
     Eraser: `${itemsFolder}/Eraser.png`,
