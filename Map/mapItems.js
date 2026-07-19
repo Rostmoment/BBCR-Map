@@ -42,12 +42,12 @@ class MapItems {
     }
 
     static onItemEnter(item) {
-        console.log("enter:", item.dataset.itemName);
+        CursorTooltip.showTooltipText(item.dataset.itemName);
         item.classList.add("hovered");
     }
 
     static onItemExit(item) {
-        console.log("exit:", item.dataset.itemName);
+        CursorTooltip.hideTooltip();
         item.classList.remove("hovered");
     }
 }

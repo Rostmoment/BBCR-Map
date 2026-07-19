@@ -212,3 +212,17 @@ body::before {
     place-self: center;
     pointer-events: none;
 }
+
+.cursor-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background-color: black;
+    border: 2px solid red;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: none; 
+    z-index: 1000;
+    white-space: nowrap;
+}
