@@ -327,7 +327,7 @@ class BaseStyle {
     }
 
     _initializeShinyQuarter() {
-        MapItems.addItem(17, 38, Items.ShinyQuarter, ItemName.ShinyQuarter, 35, 46);
+        MapItems.addItem(17, 38, Items.ShinyQuarter, ItemName.ShinyQuarter, 13, 38);
     }
 
     initialize() {
