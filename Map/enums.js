@@ -56,9 +56,28 @@ const Items = Object.freeze({
     NoSquee: `${itemsFolder}/NoSquee.png`,
     Present: `${itemsFolder}/Present.png`,
     Quarter: `${itemsFolder}/Quarter.png`,
+    ShinyQuarter: `${itemsFolder}/ShinyQuarter.png`,
     SafetyScissors: `${itemsFolder}/SafetyScissors.png`,
     Tape: `${itemsFolder}/Tape.png`,
     Unknown: `${itemsFolder}/Unknown.png`,
     Whistle: `${itemsFolder}/Whistle.png`,
     Zesty: `${itemsFolder}/Zesty.png`
+});
+
+const ItemName = Object.freeze({
+    Present: "Present",
+    PotentialSpot: "Potential Item Spot",
+    Zesty: "Energy Flavored Zesty Bar",
+    BSODA: "BSODA",
+    Boots: "Big Ol' Boots",
+    DetentionKey: "Principal's Keys",
+    NoSquee: "WD-NoSquee",
+    Quarter: "Quarter",
+    ShinyQuarter: "A Shiny Quarter!",
+    DoorLock: "Swinging Door Lock",
+    Tape: "Baldi's Least Favorite Tape",
+    AlarmClock: "Alarm Clock",
+    ChalkEraser: "Dirty Chalk Eraser",
+    PrincipalWhistle: "Principal Whistle",
+    Scissors: "Safety Scissors"
 });

@@ -28,6 +28,14 @@ class MapCells {
         return null;
     }
 
+    static getAllCells() {
+        const res = [];
+        for (const [key, value] of addedCells) {
+            res.push(value);
+        }
+        return res;
+    }
+
     static getOrAddCell(x, y, type, room) {
         const key = `${x};${y}`;
 

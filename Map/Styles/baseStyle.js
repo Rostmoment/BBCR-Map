@@ -326,6 +326,10 @@ class BaseStyle {
 
     }
 
+    _initializeShinyQuarter() {
+        MapItems.addItem(17, 38, Items.ShinyQuarter, ItemName.ShinyQuarter, 35, 46);
+    }
+
     initialize() {
         this._initializeHallway();
 
@@ -342,5 +346,6 @@ class BaseStyle {
 
         this._initializeSkybox();
         this._initializeItems();
+        this._initializeShinyQuarter();
     }
 }
