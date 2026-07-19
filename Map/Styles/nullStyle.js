@@ -14,7 +14,7 @@ class NullStyle extends BaseStyle {
         MapItems.addItem(17, 42, Items.Eraser, ItemName.ChalkEraser, 20, 75);
 
         // Closet WD
-        MapItems.addItem(25, 36, Items.NoSquee, ItemName.NoSquee, 45, 30)
+        MapItems.addItem(25, 36, Items.NoSquee, ItemName.NoSquee, 45, 30);
 
         // Faculty 1 zesty
         MapItems.addItem(8, 35, Items.Zesty, ItemName.Zesty, 40, 0);

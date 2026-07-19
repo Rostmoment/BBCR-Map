@@ -9,7 +9,7 @@ class ClassicStyle extends BaseStyle {
     _initializeItems() {
 
         // Closet WD
-        MapItems.addItem(25, 36, Items.NoSquee, ItemName.NoSquee, 45, 30)
+        MapItems.addItem(25, 36, Items.NoSquee, ItemName.NoSquee, 45, 30);
 
         // Faculty 1 zesty
         MapItems.addItem(8, 35, Items.Zesty, ItemName.Zesty, 40, 0);
@@ -31,13 +31,13 @@ class ClassicStyle extends BaseStyle {
         // Classroom 3 scissors
         MapItems.addItem(20, 29, Items.SafetyScissors, ItemName.Scissors, 5, 85);
 
-        // Classroom 4 scissors
+        // Classroom 4 scissors 
         MapItems.addItem(14, 19, Items.SafetyScissors, ItemName.Scissors, 45, 5);
 
-        // Classroom 5 boots
+        // Classroom 5 boots 
         MapItems.addItem(4, 13, Items.Boots, ItemName.Boots, -10, 17.5);
 
-        // Classroom 7 scissors
+        // Classroom 7 scissors 
         MapItems.addItem(22, 22, Items.SafetyScissors, ItemName.Scissors, 42, -45);
 
         // Cafeteria zesty and bsoda
