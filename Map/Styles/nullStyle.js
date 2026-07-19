@@ -50,7 +50,7 @@ class NullStyle extends BaseStyle {
         MapItems.addItem(14, 10, Items.BSODA, ItemName.BSODA, 20, 20);
     }
 
-    // No shny quarter!
+    // No shiny quarter!
     _initializeShinyQuarter() {
 
     }
