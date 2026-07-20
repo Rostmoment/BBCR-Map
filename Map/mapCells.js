@@ -9,7 +9,13 @@ const portalPosterColor = "deeppink";
 const mapElement = document.getElementById("map");
 const addedCells = new Map();
 
-class MapCells { 
+class MapCells {
+
+    static currentlyClickedCell;
+
+    static getStringKey(x, y) {
+        return `${x};${y}`;
+    }
 
     static isValidCellPosition(x, y) {
         const rootStyles = getComputedStyle(document.documentElement);
@@ -20,7 +26,7 @@ class MapCells {
     }
 
     static getCell(x, y) {
-        const key = `${x};${y}`;
+        const key = MapCells.getStringKey(x, y);
 
         if (addedCells.has(key)) {
             return addedCells.get(key);
@@ -37,7 +43,7 @@ class MapCells {
     }
 
     static getOrAddCell(x, y, type, room) {
-        const key = `${x};${y}`;
+        const key = MapCells.getStringKey(x, y);
 
         if (addedCells.has(key)) {
             console.log(`Cell ${x};${y} has already been added! Returning it...`)
@@ -59,6 +65,8 @@ class MapCells {
         mapElement.appendChild(cell);
 
         cell.addEventListener("click", () => {
+            PanoramaViewer.setPanoramaButtonHidden(!PanoramaViewer.hasPanorama(x, y));
+            MapCells.currentlyClickedCell = cell;
             MapCells.showInfo(cell);
         });
 
@@ -67,7 +75,7 @@ class MapCells {
     }
 
     static tryAddWalls(cells) {
-        const cellSet = new Set(cells.map(([x, y]) => `${x};${y}`));
+        const cellSet = new Set(cells.map(([x, y]) => MapCells.getStringKey(x, y)));
 
         for (const [x, y] of cells) {
             const currentCell = MapCells.getCell(x, y);
@@ -76,7 +84,7 @@ class MapCells {
                 continue;
 
             // Left
-            if (!cellSet.has(`${x - 1};${y}`)) {
+            if (!cellSet.has(MapCells.getStringKey(x - 1, y))) {
                 MapCells.addLeftBorder(currentCell, wallColor);
 
                 const neighbor = MapCells.getCell(x - 1, y);
@@ -85,7 +93,7 @@ class MapCells {
             }
 
             // Right
-            if (!cellSet.has(`${x + 1};${y}`)) {
+            if (!cellSet.has(MapCells.getStringKey(x + 1, y))) {
                 MapCells.addRightBorder(currentCell, wallColor);
 
                 const neighbor = MapCells.getCell(x + 1, y);
@@ -94,7 +102,7 @@ class MapCells {
             }
 
             // Top
-            if (!cellSet.has(`${x};${y - 1}`)) {
+            if (!cellSet.has(MapCells.getStringKey(x, y - 1))) {
                 MapCells.addTopBorder(currentCell, wallColor);
 
                 const neighbor = MapCells.getCell(x, y - 1);
@@ -103,7 +111,7 @@ class MapCells {
             }
 
             // Bottom
-            if (!cellSet.has(`${x};${y + 1}`)) {
+            if (!cellSet.has(MapCells.getStringKey(x, y + 1))) {
                 MapCells.addBottomBorder(currentCell, wallColor);
 
                 const neighbor = MapCells.getCell(x, y + 1);
