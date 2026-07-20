@@ -54,7 +54,6 @@ class DemoStyle extends BaseStyle {
         MapItems.addItem(23, 23, Items.Unknown, ItemName.PotentialSpot, 0, 51);
         MapItems.addItem(23, 22, Items.Unknown, ItemName.PotentialSpot, 0, 64);
         MapItems.addItem(23, 21, Items.Unknown, ItemName.PotentialSpot, 0, 64);
-        MapItems.addItem(22, 21, Items.Unknown, ItemName.PotentialSpot, 38, 64);
         MapItems.addItem(22, 23, Items.Unknown, ItemName.PotentialSpot, 38, -51);
         MapItems.addItem(22, 23, Items.Unknown, ItemName.PotentialSpot, 38, 51);
         MapItems.addItem(22, 24, Items.Unknown, ItemName.PotentialSpot, 38, 13);
@@ -74,6 +73,8 @@ class DemoStyle extends BaseStyle {
         MapItems.addItem(26, 22, Items.Unknown, ItemName.PotentialSpot, 13, 64);
         MapItems.addItem(25, 21, Items.Unknown, ItemName.PotentialSpot, 51, 64);
         MapItems.addItem(25, 23, Items.Unknown, ItemName.PotentialSpot, 51, 51);
+
+        MapItems.addItem(22, 21, Items.SafetyScissors, `${ItemName.Scissors} + ${ItemName.PotentialSpot}`, 38, 64);
 
         // Faculty 1
         MapItems.addItem(9, 37, Items.Unknown, ItemName.PotentialSpot, -51, -38);

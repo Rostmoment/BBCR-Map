@@ -2,7 +2,7 @@ const tooltip = document.getElementById('tooltip');
 
 class CursorTooltip {
     static showTooltipText(tooltipText) {
-        tooltip.textContent = tooltipText;
+        tooltip.innerHTML = tooltipText;
         tooltip.style.display = 'block';
 
     }

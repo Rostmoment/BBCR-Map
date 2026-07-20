@@ -220,7 +220,8 @@ body::before {
     color: #fff;
     padding: 6px 12px;
     font-size: 14px;
-    display: none; 
+    display: none;
+    text-align: center;
     z-index: 1000;
     white-space: nowrap;
 }
