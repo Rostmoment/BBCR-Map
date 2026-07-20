@@ -2,6 +2,7 @@ const itemsElement = document.getElementById("items");
 
 class MapItems {
     static items = [];
+    static #enterCounter = 0;
 
     static addItem(x, y, imageUrl, itemName, xOffset = 0, yOffset = 0) {
         const item = document.createElement("img");
@@ -42,12 +43,17 @@ class MapItems {
     }
 
     static onItemEnter(item) {
+        MapItems.#enterCounter++;
         CursorTooltip.showTooltipText(item.dataset.itemName);
         item.classList.add("hovered");
     }
 
     static onItemExit(item) {
-        CursorTooltip.hideTooltip();
+        MapItems.#enterCounter--;
+
+        if (MapItems.#enterCounter <= 0) {
+            CursorTooltip.hideTooltip();
+        }
         item.classList.remove("hovered");
     }
 }
