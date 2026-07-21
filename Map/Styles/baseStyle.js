@@ -68,8 +68,17 @@ class BaseStyle {
     }
 
     _initializeMinorRooms() {
-        MapCells.addCells2DArray(MapCells.createRectangularArea(24, 36, 2, 1), FloorType.BlueCarpet, Rooms.Closet);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(16, 21, 4, 5), FloorType.BlueCarpet, Rooms.Office);
+        // Closet
+        let cells = MapCells.createRectangularArea(24, 36, 2, 1);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Closet);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Closet.png");
+
+        // Office
+        cells = MapCells.createRectangularArea(16, 21, 4, 5);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Office);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Office.png");
+
+
         MapCells.addCells2DArray(MapCells.createRectangularArea(7, 6, 13, 9), FloorType.Hall, Rooms.Cafeteria);
     }
 

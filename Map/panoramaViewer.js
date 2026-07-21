@@ -53,3 +53,4 @@ class PanoramaViewer {
 panoramaButton.addEventListener("click", () => {
     PanoramaViewer.openPanorama(MapCells.currentlyClickedCell.dataset.x, MapCells.currentlyClickedCell.dataset.y);
 });
+GeneralHelpers.setHiddenDiv(panoramaButton, true);  
