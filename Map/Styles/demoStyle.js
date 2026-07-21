@@ -198,11 +198,4 @@ class DemoStyle extends BaseStyle {
         MapCells.addRightBorder(MapCells.getCell(15, 19), portalPosterColor);
         MapCells.addLeftBorder(MapCells.getCell(16, 19), portalPosterColor);
     }
-
-    _initializeBladderRoom() {
-        super._initializeBladderRoom();
-
-        const cells = MapCells.createRectangularArea(24, 19, 2, 2);
-        PanoramaViewer.addPanoramaForCells(cells, this.name, "Bladder.png");
-    }
 }

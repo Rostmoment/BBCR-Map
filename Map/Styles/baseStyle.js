@@ -4,13 +4,40 @@ class BaseStyle {
     }
 
     _initializeClassrooms() {
-        MapCells.addCells2DArray(MapCells.createRectangularArea(12, 35, 5, 4), FloorType.BlueCarpet, Rooms.Classroom1);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(18, 35, 5, 4), FloorType.BlueCarpet, Rooms.Classroom2);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(18, 27, 5, 5), FloorType.BlueCarpet, Rooms.Classroom3);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(11, 16, 5, 4), FloorType.BlueCarpet, Rooms.Classroom4);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(1, 10, 5, 5), FloorType.BlueCarpet, Rooms.Classroom5);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(21, 7, 7, 5), FloorType.BlueCarpet, Rooms.Classroom6);
-        MapCells.addCells2DArray(MapCells.createRectangularArea(21, 21, 7, 5), FloorType.BlueCarpet, Rooms.Classroom7);
+        // Classroom 1
+        let cells = MapCells.createRectangularArea(12, 35, 5, 4);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom1);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom1.png");
+
+        // Classroom 2 
+        cells = MapCells.createRectangularArea(18, 35, 5, 4);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom2);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom2.png");
+
+        // Classroom 3
+        cells = MapCells.createRectangularArea(18, 27, 5, 5);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom3);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom3.png");
+
+        // Classroom 4
+        cells = MapCells.createRectangularArea(11, 16, 5, 4);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom4);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom4.png");
+
+        // Classroom 5
+        cells = MapCells.createRectangularArea(1, 10, 5, 5);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom5);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom5.png");
+
+        // Classroom 6
+        cells = MapCells.createRectangularArea(21, 7, 7, 5);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom6);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom6.png");
+
+        // Classroom 7
+        cells = MapCells.createRectangularArea(21, 21, 7, 5);
+        MapCells.addCells2DArray(cells, FloorType.BlueCarpet, Rooms.Classroom7);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Classroom7.png");
     }
 
     _initializeFaculties() {
@@ -313,13 +340,22 @@ class BaseStyle {
     }
 
     _initializeBladderRoom() {
-        MapCells.addCells2DArray(MapCells.createRectangularArea(24, 19, 2, 2), FloorType.DarkHall, Rooms.BladderRoom);
+        const cells = MapCells.createRectangularArea(24, 19, 2, 2);
+
+        MapCells.addCells2DArray(cells, FloorType.DarkHall, Rooms.BladderRoom);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Bladder.png");
     }
     _initializeBasementRoom() {
-        MapCells.addCells2DArray(MapCells.createRectangularArea(16, 19, 3, 1), FloorType.DarkHall, Rooms.Basement);
+        const cells = MapCells.createRectangularArea(16, 19, 3, 1);
+
+        MapCells.addCells2DArray(cells, FloorType.DarkHall, Rooms.Basement);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "Basement.png");
     }
     _initializeNonCanonRoom() {
-        MapCells.addCells2DArray(MapCells.createRectangularArea(8, 27, 3, 3), FloorType.NonCannon, Rooms.NonCannon);
+        const cells = MapCells.createRectangularArea(8, 27, 3, 3);
+
+        MapCells.addCells2DArray(cells, FloorType.NonCannon, Rooms.NonCannon);
+        PanoramaViewer.addPanoramaForCells(cells, this.name, "NonCanon.png");
     }
 
     _initializeItems() {
