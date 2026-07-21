@@ -168,7 +168,7 @@ class MapCells {
         }
     }
 
-    static showInfo(cell) {
+    static showInfo(cell, postfix = "") {
         const title = document.getElementById("cell-info-title");
         const info = document.getElementById("cell-info-info");
         const x = cell.dataset.x;
@@ -179,6 +179,24 @@ class MapCells {
         const game = MapCells.mapToGameCoordinates(x, y);
         info.innerHTML = `In game coordinates: (${game.x}; y; ${game.y})
                           <br>
-                          In site map coordinates: (${x}; ${y})`;
+                          In site map coordinates: (${x}; ${y})
+                          ${postfix}`;
+    }
+
+    static makeCellSpecial(x, y, ...properties) {
+        const cell = MapCells.getCell(x, y);
+        if (!cell) {
+            console.log(`Cell ${x};${y} doesn't exist`);
+            return;
+        }
+
+        cell.classList.add("special-cell");
+        cell.addEventListener("click", () => {
+            let result = "";
+            for (const property of properties) {
+                result += property.getString();
+            }
+            MapCells.showInfo(cell, result);
+        });
     }
 }

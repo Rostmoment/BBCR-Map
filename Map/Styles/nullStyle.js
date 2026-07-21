@@ -54,4 +54,9 @@ class NullStyle extends BaseStyle {
     _initializeShinyQuarter() {
 
     }
+
+    // No arts and crafters triggers
+    _addArtsAndCraftersTriggers() {
+
+    }
 }

@@ -95,7 +95,8 @@ class BaseStyle {
         MapCells.addCells2DArray(MapCells.createRectangularArea(29, 20, 1, 3), FloorType.Hall, Rooms.ExitEast); // East
 
         MapCells.getOrAddCell(16, 40, FloorType.Hall, Rooms.ExitSouth);
-        MapCells.getOrAddCell(17, 40, FloorType.GreenCarpet, Rooms.ExitSouth);
+        MapCells.getOrAddCell(17, 40, FloorType.Hall, Rooms.ExitSouth);
+        MapCells.makeCellSpecial(17, 40, new SpawnSpecialCell());
         MapCells.getOrAddCell(18, 40, FloorType.Hall, Rooms.ExitSouth);
     }
 
@@ -394,6 +395,28 @@ class BaseStyle {
         MapItems.addItem(17, 38, Items.ShinyQuarter, ItemName.ShinyQuarter, 13, 38);
     }
 
+    _addArtsAndCraftersTriggers() {
+        const triggers = [
+            { trigger: { x: 6, y: 4 }, target: { x: 6, y: 39 } },
+            { trigger: { x: 23, y: 26 }, target: { x: 6, y: 26 } },
+            { trigger: { x: 20, y: 15 }, target: { x: 6, y: 15 } },
+            { trigger: { x: 20, y: 10 }, target: { x: 6, y: 10 } },
+            { trigger: { x: 6, y: 39 }, target: { x: 6, y: 4 } },
+            { trigger: { x: 20, y: 6 }, target: { x: 20, y: 26 } },
+            { trigger: { x: 6, y: 15 }, target: { x: 20, y: 15 } },
+            { trigger: { x: 6, y: 10 }, target: { x: 20, y: 10 } },
+            { trigger: { x: 20, y: 26 }, target: { x: 20, y: 6 } },
+            { trigger: { x: 23, y: 26 }, target: { x: 23, y: 39 } },
+            { trigger: { x: 23, y: 39 }, target: { x: 23, y: 26 } },
+            { trigger: { x: 28, y: 6 }, target: { x: 28, y: 39 } },
+            { trigger: { x: 28, y: 39 }, target: { x: 28, y: 6 } }
+        ];
+
+        for (const data of triggers) {
+            MapCells.makeCellSpecial(data.trigger.x, data.trigger.y, new ArtsAndCraftersSpecialCell(data.target.x, data.target.y));
+        }
+    }
+
     initialize() {
         this._initializeHallway();
 
@@ -407,8 +430,10 @@ class BaseStyle {
         this._initializeWindows();
 
         this.removeNotNeededBorders();
-
         this._initializeSkybox();
+
+        this._addArtsAndCraftersTriggers();
+
         this._initializeItems();
         this._initializeShinyQuarter();
     }
